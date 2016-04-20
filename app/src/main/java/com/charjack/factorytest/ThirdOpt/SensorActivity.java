@@ -28,7 +28,7 @@ import java.util.TimerTask;
 
 public class SensorActivity extends Activity implements View.OnClickListener{
 
-    Button button_error,button_right;
+    Button button_error,button_right,button_replay;
     TextView x_value,y_value,z_value;
     TextView x_zheng_ok,x_fu_ok,y_zheng_ok,y_fu_ok,z_zheng_ok,z_fu_ok;
     TextView light_value,distance_value;
@@ -44,8 +44,14 @@ public class SensorActivity extends Activity implements View.OnClickListener{
 
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
         button_error.setOnClickListener(this);
+        button_replay.setOnClickListener(this);
+        if(BaseApp.autotest == 1){
+            button_replay.setVisibility(View.VISIBLE);
+        }
+
         x_value = (TextView) findViewById(R.id.x_value);
         y_value = (TextView) findViewById(R.id.y_value);
         z_value = (TextView) findViewById(R.id.z_value);
@@ -118,6 +124,11 @@ public class SensorActivity extends Activity implements View.OnClickListener{
                     editor.putString("SENSOR", "0");
                     editor.apply();
                     intent.setClass(SensorActivity.this, BluetoothActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.button_replay:
+                    intent.setClass(SensorActivity.this, SensorActivity.class);
                     startActivity(intent);
                     finish();
                     break;

@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -204,14 +204,14 @@
         android:text="未检测到数据"
         android:textColor="#000"
         android:textSize="20sp" />
-
+    </LinearLayout>
+</ScrollView>
     <LinearLayout
         android:id="@+id/lcd_button_select"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="20dp">
+        android:layout_gravity="bottom">
         <Button
             android:id="@+id/button_right"
             android:layout_width="wrap_content"
@@ -221,6 +221,17 @@
             android:padding="5dp"
             android:text="正确"
             android:textSize="20sp"/>
+        />
+        <Button
+            android:id="@+id/button_replay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyle"
+            android:padding="5dp"
+            android:text="REPLAY"
+            android:textSize="20sp"
+            android:visibility="gone"/>
         />
         <Button
             android:id="@+id/button_error"
@@ -233,6 +244,4 @@
             android:textSize="20sp"/>
         />
     </LinearLayout>
-    </LinearLayout>
-</ScrollView>
-</LinearLayout>
+</RelativeLayout>

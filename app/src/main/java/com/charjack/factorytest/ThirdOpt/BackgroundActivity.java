@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.charjack.factorytest.Contents;
 import com.charjack.factorytest.R;
@@ -22,7 +23,7 @@ import java.util.TimerTask;
 public class BackgroundActivity extends ActionBarActivity implements View.OnClickListener {
 
     Timer timer;
-    Button button_error,button_right;
+    Button button_error,button_right,button_replay;
     WindowManager.LayoutParams lp;
     final Handler handler = new Handler(){
         public void handleMessage(Message msg) {
@@ -46,11 +47,16 @@ public class BackgroundActivity extends ActionBarActivity implements View.OnClic
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置成全屏模式
         setContentView(R.layout.activity_background);
 
+
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
         button_error.setOnClickListener(this);
-
+        button_replay.setOnClickListener(this);
+        if(BaseApp.autotest == 1){
+            button_replay.setVisibility(View.VISIBLE);
+        }
 //        lp = getWindow().getAttributes();
 //        lp.screenBrightness = 0.0f;
 //        getWindow().setAttributes(lp);
@@ -94,7 +100,6 @@ public class BackgroundActivity extends ActionBarActivity implements View.OnClic
                     intent.setClass(BackgroundActivity.this, LCDActivity.class);
                     startActivity(intent);
                     finish();
-
                     break;
                 case R.id.button_error:
                     editor.putString("BACKGROUND", "0");
@@ -103,19 +108,23 @@ public class BackgroundActivity extends ActionBarActivity implements View.OnClic
                     startActivity(intent);
                     finish();
                     break;
+                case R.id.button_replay:
+                    intent.setClass(BackgroundActivity.this,BackgroundActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
             }
         }
-
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        Intent intent = new Intent();
-        intent.putExtra("str", Contents.ERROR);
-        setResult(Contents.BEIGUANG_NUM, intent);
-        timer.cancel();
-        finish();
+            Intent intent = new Intent();
+            intent.putExtra("str", Contents.ERROR);
+            setResult(Contents.BEIGUANG_NUM, intent);
+            timer.cancel();
+            finish();
         return true;
     }
+
 }

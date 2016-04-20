@@ -30,7 +30,7 @@ import java.util.List;
 
 public class WifiActivity extends Activity implements View.OnClickListener {
     public List<String> lists = new ArrayList<>();
-    Button button_error,button_right;
+    Button button_error,button_right,button_replay;
     ListView list_view;
     TextView start_wifi;
     WifiManager wifiManager;
@@ -42,10 +42,16 @@ public class WifiActivity extends Activity implements View.OnClickListener {
         list_view = (ListView) findViewById(R.id.list_view);
         start_wifi = (TextView) findViewById(R.id.start_wifi);
 
+
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
         button_error.setOnClickListener(this);
+        button_replay.setOnClickListener(this);
+        if(BaseApp.autotest == 1){
+            button_replay.setVisibility(View.VISIBLE);
+        }
 
         wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(true);  //open wifi
@@ -131,6 +137,11 @@ public class WifiActivity extends Activity implements View.OnClickListener {
                     editor.putString("WIFI", "0");
                     editor.apply();
                     intent.setClass(WifiActivity.this, GPSActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.button_replay:
+                    intent.setClass(WifiActivity.this, WifiActivity.class);
                     startActivity(intent);
                     finish();
                     break;

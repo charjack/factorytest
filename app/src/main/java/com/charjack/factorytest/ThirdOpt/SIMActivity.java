@@ -25,7 +25,7 @@ import com.charjack.factorytest.Utils.BaseApp;
 public class SIMActivity extends Activity implements View.OnClickListener {
     //https://software.intel.com/zh-cn/blogs/2011/12/16/android-gsmcdma
     //http://blog.csdn.net/jingwen3699/article/details/8373183
-    Button button_error,button_right;
+    Button button_error,button_right,button_replay;
     TextView sim_state_value,sim_number_value,sim_degree_value;
 
     TelephonyManager tm;
@@ -38,8 +38,13 @@ public class SIMActivity extends Activity implements View.OnClickListener {
 
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
         button_error.setOnClickListener(this);
+        button_replay.setOnClickListener(this);
+        if(BaseApp.autotest == 1){
+            button_replay.setVisibility(View.VISIBLE);
+        }
 
         sim_state_value = (TextView) findViewById(R.id.sim_state_value);
         sim_number_value = (TextView) findViewById(R.id.sim_number_value);
@@ -85,8 +90,8 @@ public class SIMActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent();
         if(BaseApp.autotest == 0) {
-            Intent intent = new Intent();
             switch (v.getId()) {
                 case R.id.button_right:
                     intent.putExtra("str", Contents.RIGHT);
@@ -113,6 +118,11 @@ public class SIMActivity extends Activity implements View.OnClickListener {
                     editor.putString("SIM", "0");
                     editor.apply();
                     BaseApp.autotest = 0;
+                    finish();
+                    break;
+                case R.id.button_replay:
+                    intent.setClass(SIMActivity.this, SIMActivity.class);
+                    startActivity(intent);
                     finish();
                     break;
             }

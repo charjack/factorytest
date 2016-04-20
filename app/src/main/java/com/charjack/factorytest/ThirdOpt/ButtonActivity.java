@@ -16,17 +16,23 @@ import com.charjack.factorytest.Utils.BaseApp;
 
 public class ButtonActivity extends ActionBarActivity implements View.OnClickListener{
 
-    Button button_error,button_right;
+    Button button_error,button_right,button_replay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置成全屏模式
         setContentView(R.layout.activity_button);
 
+
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
         button_error.setOnClickListener(this);
+        button_replay.setOnClickListener(this);
+        if(BaseApp.autotest == 1){
+            button_replay.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -60,6 +66,11 @@ public class ButtonActivity extends ActionBarActivity implements View.OnClickLis
                     editor.putString("BUTTON", "0");
                     editor.apply();
                     intent.setClass(ButtonActivity.this, RecordPlayActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.button_replay:
+                    intent.setClass(ButtonActivity.this, ButtonActivity.class);
                     startActivity(intent);
                     finish();
                     break;

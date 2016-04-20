@@ -28,7 +28,7 @@ public class LCDActivity extends Activity implements View.OnClickListener {
     TextView lcd_textview;
     TextView lcd_textview_show;
     LinearLayout lcd_button_select;
-    Button button_error,button_right;
+    Button button_error,button_right,button_replay;
     Timer timer;
      final Handler handler = new Handler(){
              public void handleMessage(Message msg) {
@@ -52,13 +52,19 @@ public class LCDActivity extends Activity implements View.OnClickListener {
 
         lcd_textview = (TextView) findViewById(R.id.lcd_textview);
         lcd_textview_show = (TextView) findViewById(R.id.lcd_textview_show);
+        lcd_textview_show.setOnClickListener(this);
         lcd_button_select = (LinearLayout) findViewById(R.id.lcd_button_select);
+
+
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
-        lcd_textview_show.setOnClickListener(this);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
         button_error.setOnClickListener(this);
-
+        button_replay.setOnClickListener(this);
+        if(BaseApp.autotest == 1){
+            button_replay.setVisibility(View.VISIBLE);
+        }
         timer = new Timer(true);
         timer.schedule(new TimerTask() {
             @Override
@@ -126,6 +132,11 @@ public class LCDActivity extends Activity implements View.OnClickListener {
                     editor.putString("LCD", "0");
                     editor.apply();
                     intent.setClass(LCDActivity.this, ButtonActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.button_replay:
+                    intent.setClass(LCDActivity.this, LCDActivity.class);
                     startActivity(intent);
                     finish();
                     break;

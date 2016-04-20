@@ -52,7 +52,7 @@ public class TouchActivity extends Activity implements MyPaintView.OnCoverListen
     };
     public int screenWidth,screenHeigh;
     public int rednum = 0;
-    public Button button_right;
+    public Button button_right,button_replay;
 
     public static void setbackgroud(int num){
         switch(num){
@@ -165,8 +165,12 @@ public class TouchActivity extends Activity implements MyPaintView.OnCoverListen
         for(int i=0;i<75;i++){
             var[i] = 0 ;
         }
+
         button_right = (Button) findViewById(R.id.button_right);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
+        button_replay.setOnClickListener(this);
+
         rednum = 0;
         button11 = (Button) findViewById(R.id.button11);
         button12 = (Button) findViewById(R.id.button12);
@@ -278,6 +282,7 @@ public class TouchActivity extends Activity implements MyPaintView.OnCoverListen
                 finish();
             }else if(BaseApp.autotest == 1){
                 button_right.setVisibility(View.VISIBLE);
+                button_replay.setVisibility(View.VISIBLE);
             }
         }
     }
@@ -312,6 +317,11 @@ public class TouchActivity extends Activity implements MyPaintView.OnCoverListen
                 editor.putString("TOUCH", "1");
                 editor.apply();
                 intent.setClass(TouchActivity.this,SensorActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.button_replay:
+                intent.setClass(TouchActivity.this, TouchActivity.class);
                 startActivity(intent);
                 finish();
                 break;

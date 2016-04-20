@@ -13,7 +13,6 @@ public class BaseApp extends Application{
     public static Context context;
     public static int autotest = 0;
     public static boolean ifdebug = false;
-
     public static Context getContext() {
         return context;
     }

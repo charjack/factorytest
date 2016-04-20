@@ -26,7 +26,7 @@ public class AutoTestActivity extends ActionBarActivity {
 
         Dialog alertDialog = new AlertDialog.Builder(this).
                 setTitle("注意").
-                setMessage("测试完成后，在按下正确或错误按钮前，可以按HOME键重测！").
+                setMessage("测试完成后，在按下正确或错误按钮前，可以点击replay键重测！").
               setNegativeButton("取消", new DialogInterface.OnClickListener() {
                   @Override
                   public void onClick(DialogInterface dialog, int which) {

@@ -22,7 +22,7 @@ import com.charjack.factorytest.Utils.BaseApp;
 import java.io.IOException;
 
 public class RecordPlayActivity extends ActionBarActivity implements View.OnClickListener {
-    Button button_error,button_right;
+    Button button_error,button_right,button_replay;
     Button button_record_start,button_record_stop,button_play_start,button_play_stop;
 
     private String fileName = null;
@@ -38,9 +38,13 @@ public class RecordPlayActivity extends ActionBarActivity implements View.OnClic
 
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
+        button_replay = (Button) findViewById(R.id.button_replay);
         button_right.setOnClickListener(this);
         button_error.setOnClickListener(this);
-
+        button_replay.setOnClickListener(this);
+        if(BaseApp.autotest == 1){
+            button_replay.setVisibility(View.VISIBLE);
+        }
         button_record_start = (Button) findViewById(R.id.button_record_start);
         button_record_stop = (Button) findViewById(R.id.button_record_stop);
         button_play_start = (Button) findViewById(R.id.button_play_start);
@@ -86,6 +90,13 @@ public class RecordPlayActivity extends ActionBarActivity implements View.OnClic
                     editor.putString("RECORDPLAY", "0");
                     editor.apply();
                     intent.setClass(RecordPlayActivity.this,CameraActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                break;
+            case R.id.button_replay:
+                if(BaseApp.autotest == 1){
+                    intent.setClass(RecordPlayActivity.this, RecordPlayActivity.class);
                     startActivity(intent);
                     finish();
                 }
