@@ -35,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置成全屏模式
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//强制为横屏
-
+//怎么github同步的时候，没有全部同步
         setContentView(R.layout.activity_main);
         main_list = (ListView) findViewById(R.id.main_list);
         initdata();
