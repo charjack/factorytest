@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">工厂测试</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_manu">手动测试</string>
+    <string name="title_activity_background">背光</string>
+    <string name="title_activity_lcd">LCD</string>
+    <string name="title_activity_verson">版本</string>
+    <string name="title_activity_button">按钮</string>
+    <string name="title_activity_record_play">麦克和喇叭</string>
+    <string name="title_activity_touch">触摸屏</string>
+    <string name="title_activity_sensor">传感器</string>
+    <string name="title_activity_wifi">Wifi</string>
+    <string name="title_activity_gps">GPS</string>
+    <string name="title_activity_sim">检测SIM状态</string>
+    <string name="title_activity_report">测试报告</string>
+    <string name="title_activity_auto_test">自动测试</string>
+    <string name="title_activity_camera">摄像头</string>
+    <string name="title_activity_bluetooth">蓝牙</string>
+    <string name="title_activity_sdcard">SD卡</string>
+</resources>

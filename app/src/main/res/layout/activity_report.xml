@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.charjack.factorytest.SecondOpt.ReportActivity">
+
+    <TextView
+        android:id="@+id/show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试结果中'1'表示正确，'0'表示错误，'NONE'表示没有测试"
+        android:textColor="#ff0000"
+        android:textSize="20sp" />
+    <ListView
+        android:id="@+id/report_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_result">
+    </ListView>
+
+</RelativeLayout>

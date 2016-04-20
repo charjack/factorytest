@@ -1,0 +1,238 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.charjack.factorytest.ThirdOpt.SensorActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加速度传感器"
+        android:textColor="#f00"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="变换手机的方向，如果xyz三轴政府测试记过都显示 'OK',即可判定传感器工作正常"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/x_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VALUE"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Y:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/y_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VALUE"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Z:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/z_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VALUE"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X+:"
+        android:textColor="#f00"
+        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/x_zheng_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Testing"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   X-:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/x_fu_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Testing"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y+:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/y_zheng_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Testing"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Y-:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/y_fu_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Testing"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z+:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/z_zheng_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Testing"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Z-:"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/z_fu_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Testing"
+            android:textColor="#f00"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+//光线与距离传感器
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="光线与距离传感器"
+        android:textColor="#f00"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用手遮住光感，根据下面的数据的变化判断传感器是否正常工作"
+        android:textColor="#000"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="光线强度"
+        android:textColor="#f00"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/light_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="未检测到数据"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="距离感应"
+        android:textColor="#f00"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/distance_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="未检测到数据"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/lcd_button_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyle"
+            android:padding="5dp"
+            android:text="正确"
+            android:textSize="20sp"/>
+        />
+        <Button
+            android:id="@+id/button_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyle"
+            android:padding="5dp"
+            android:text="错误"
+            android:textSize="20sp"/>
+        />
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.charjack.factorytest" >
+
+    <!-- record and play -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- wifi -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- GPS -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- SIM -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".Utils.BaseApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondOpt.ManuActivity"
+            android:label="@string/title_activity_manu"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.VersonActivity"
+            android:label="@string/title_activity_verson"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.BackgroundActivity"
+            android:label="@string/title_activity_background"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.LCDActivity"
+            android:label="@string/title_activity_lcd"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.ButtonActivity"
+            android:label="@string/title_activity_button"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.RecordPlayActivity"
+            android:label="@string/title_activity_record_play"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.TouchActivity"
+            android:label="@string/title_activity_touch"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.SensorActivity"
+            android:label="@string/title_activity_sensor"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.WifiActivity"
+            android:label="@string/title_activity_wifi"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.GPSActivity"
+            android:label="@string/title_activity_gps"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.SIMActivity"
+            android:label="@string/title_activity_sim"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".SecondOpt.ReportActivity"
+            android:label="@string/title_activity_report"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".SecondOpt.AutoTestActivity"
+            android:label="@string/title_activity_auto_test"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.CameraActivity"
+            android:label="@string/title_activity_camera"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.BluetoothActivity"
+            android:label="@string/title_activity_bluetooth"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThirdOpt.SDCardActivity"
+            android:label="@string/title_activity_sdcard"
+            android:screenOrientation="landscape" >
+        </activity>
+    </application>
+
+</manifest>

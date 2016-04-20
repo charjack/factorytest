@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.charjack.factorytest.ThirdOpt.LCDActivity">
+
+    <TextView
+        android:id="@+id/lcd_textview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f00" />
+    <TextView
+        android:id="@+id/lcd_textview_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:text="请判断测试结果"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/lcd_button_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone">
+        <Button
+            android:id="@+id/button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyle"
+            android:padding="5dp"
+            android:text="正确"
+            android:textSize="20sp"/>
+            />
+        <Button
+            android:id="@+id/button_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyle"
+            android:padding="5dp"
+            android:text="错误"
+            android:textSize="20sp"/>
+            />
+
+    </LinearLayout>
+    <!--
+    全屏显示，颜色变化。
+    -->
+</FrameLayout>

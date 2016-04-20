@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.charjack.factorytest.ThirdOpt.SIMActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIM状态:  "
+                android:textColor="#00ff00"
+                android:textSize="20sp" />
+
+            <TextView android:id="@+id/sim_state_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="state value"
+                android:textColor="#00ff00"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/sim_number_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="number value"
+            android:textColor="#00ff00"
+            android:textSize="20sp" />
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注意:手机信号强度根据Cinr数值得知，屏幕会在一段时间内弹出相应的信号强度值"
+            android:textColor="#ff0000"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="信号强度:   "
+                android:textColor="#00ff00"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/sim_degree_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="strong degree value"
+                android:textColor="#00ff00"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lcd_button_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyle"
+            android:padding="5dp"
+            android:text="正确"
+            android:textSize="20sp"/>
+        />
+        <Button
+            android:id="@+id/button_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyle"
+            android:padding="5dp"
+            android:text="错误"
+            android:textSize="20sp"/>
+        />
+    </LinearLayout>
+</RelativeLayout>
