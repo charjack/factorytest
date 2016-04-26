@@ -31,13 +31,18 @@ import com.charjack.factorytest.Utils.BaseApp;
 import org.w3c.dom.Text;
 
 import java.util.Iterator;
+/*
+* 因为GPS信号偶尔会不好，所以仅使用gps的时候，绝大多数情况下回出现getLastKnowLocation为null，
+* 需要在系统的定位模式中，要允许使用wifi和network定位；这样即使gps定位返回null,network也能得到粗略的位置信息。
 
+* */
 public class GPSActivity extends Activity implements View.OnClickListener {
 //http://www.2cto.com/kf/201503/383394.html
  //   http://www.cnblogs.com/linjiqin/archive/2011/11/01/2231598.html
     Button button_error,button_right,button_replay;
     LocationManager lm;
     TextView longitude_view,latitude_view;
+
     //状态监听
     GpsStatus.Listener listener = new GpsStatus.Listener() {
         public void onGpsStatusChanged(int event) {
@@ -125,7 +130,6 @@ public class GPSActivity extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置成全屏模式
         setContentView(R.layout.activity_gps);
 
-
         button_right = (Button) findViewById(R.id.button_right);
         button_error = (Button) findViewById(R.id.button_error);
         button_replay = (Button) findViewById(R.id.button_replay);
@@ -148,11 +152,15 @@ public class GPSActivity extends Activity implements View.OnClickListener {
             return;
         }
 
-        String bestProvider = lm.getBestProvider(getCriteria(), true);
+       // String bestProvider = lm.getBestProvider(getCriteria(), true);
+        String bestProvider = LocationManager.GPS_PROVIDER;
         Location location= lm.getLastKnownLocation(bestProvider);
-        updateView(location);
+        if(location == null)
+            Toast.makeText(getApplicationContext(),"获取不到定位信息",Toast.LENGTH_SHORT).show();
+        else
+            updateView(location);
         lm.addGpsStatusListener(listener);
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, locationListener);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000,10, locationListener);
     }
 
     /**

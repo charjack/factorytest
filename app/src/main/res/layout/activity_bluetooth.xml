@@ -1,10 +1,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context="com.charjack.factorytest.ThirdOpt.BluetoothActivity">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="蓝牙待完成" />
+    <TextView
+        android:id="@+id/bluetooth_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#00ff00"
+        android:text="正在打开蓝牙..." />
+
+    <ImageView
+        android:id="@+id/divider_imageview"
+        android:layout_below="@+id/bluetooth_state"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"/>
+    <ListView
+        android:id="@+id/bluetooth_list"
+        android:layout_below="@+id/divider_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#ffffff"
+        android:dividerHeight="1dp"
+        >
+
+    </ListView>
     <LinearLayout
         android:id="@+id/lcd_button_select"
         android:layout_width="match_parent"

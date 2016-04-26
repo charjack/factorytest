@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
@@ -27,7 +28,7 @@ public class VersonActivity extends ActionBarActivity implements View.OnClickLis
     TextView versonid_value,creattime_value;
 
     public static String getAPPtime(Context ctx){
-        SimpleDateFormat formatter =  new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        SimpleDateFormat formatter =  new SimpleDateFormat("yyyy.MM.dd HH:mm:ss EEEE");
         Date curDate = new Date(System.currentTimeMillis());
         String str = formatter.format(curDate);
         return str;
@@ -66,7 +67,9 @@ public class VersonActivity extends ActionBarActivity implements View.OnClickLis
         }
         versonid_value = (TextView) findViewById(R.id.versonid_value);
         creattime_value = (TextView) findViewById(R.id.creattime_value);
-        versonid_value.setText(getAPPVersionCodeFromAPP(this));
+       // versonid_value.setText(getAPPVersionCodeFromAPP(this));//安装包的版本信息
+
+        versonid_value.setText(android.os.Build.VERSION.RELEASE); //系统的版本信息
         creattime_value.setText(getAPPtime(this));
     }
 

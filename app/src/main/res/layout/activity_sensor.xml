@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="变换手机的方向，如果xyz三轴政府测试记过都显示 'OK',即可判定传感器工作正常"
+        android:text="变换手机的方向，如果xyz三轴正负测试记过都显示 'OK',即可判定传感器工作正常"
         android:textColor="#000"
         android:textSize="20sp" />
 
@@ -170,40 +170,46 @@
         android:layout_marginTop="50dp"
         android:text="光线与距离传感器"
         android:textColor="#f00"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="用手遮住光感，根据下面的数据的变化判断传感器是否正常工作"
         android:textColor="#000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="光线强度"
         android:textColor="#f00"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
     <TextView
         android:id="@+id/light_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="未检测到数据"
         android:textColor="#000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="距离感应"
         android:textColor="#f00"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
     <TextView
         android:id="@+id/distance_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="未检测到数据"
         android:textColor="#000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
     </LinearLayout>
 </ScrollView>
     <LinearLayout

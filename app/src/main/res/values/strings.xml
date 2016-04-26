@@ -19,4 +19,8 @@
     <string name="title_activity_camera">摄像头</string>
     <string name="title_activity_bluetooth">蓝牙</string>
     <string name="title_activity_sdcard">SD卡</string>
+    <string name="loading">Loading</string>
+    <string name="no_signal">No Signal</string>
+    <string name="test">back</string>
+
 </resources>

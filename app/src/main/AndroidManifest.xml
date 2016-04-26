@@ -36,6 +36,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.charjack.factorytest.MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".SecondOpt.ManuActivity"
@@ -119,6 +123,7 @@
             android:label="@string/title_activity_sdcard"
             android:screenOrientation="landscape" >
         </activity>
+
     </application>
 
 </manifest>

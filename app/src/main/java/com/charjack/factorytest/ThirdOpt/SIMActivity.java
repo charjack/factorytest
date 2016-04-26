@@ -57,13 +57,27 @@ public class SIMActivity extends Activity implements View.OnClickListener {
             case TelephonyManager.SIM_STATE_NETWORK_LOCKED :sim_state_value.setText("需要NetworkPIN解锁");break;
             case TelephonyManager.SIM_STATE_PIN_REQUIRED :sim_state_value.setText("需要PIN解锁");break;
             case TelephonyManager.SIM_STATE_PUK_REQUIRED:sim_state_value.setText("需要PUK解锁");break;
-            case TelephonyManager.SIM_STATE_READY:sim_state_value.setText("良好");break;
+            case TelephonyManager.SIM_STATE_READY:sim_state_value.setText("有卡");break;
             default: sim_state_value.setText("未知状态");break;
         }
-        sim_number_value.setText(tm.getSimCountryIso());
+        MyListener   = new MyPhoneStateListener();
+        tm.listen(MyListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
 
+        String operator = null;
+        String IMSI = tm.getSubscriberId();
+        if (IMSI == null || IMSI.equals("")) {
+            operator = "未知";
+        }
+        if (IMSI.startsWith("46000") || IMSI.startsWith("46002")) {
+            operator = "中国移动";
+        } else if (IMSI.startsWith("46001")) {
+            operator = "中国联通";
+        } else if (IMSI.startsWith("46003")) {
+            operator = "中国电信";
+        }
+        sim_number_value.setText(tm.getSimCountryIso()+"---"+operator);
     }
-
+//http://blog.csdn.net/jingwen3699/article/details/8373183    //获取信号强度
     @Override
     protected void onPause()
     {
@@ -132,15 +146,15 @@ public class SIMActivity extends Activity implements View.OnClickListener {
 
     private class MyPhoneStateListener extends PhoneStateListener
     {
-
         @Override
         public void onSignalStrengthsChanged(SignalStrength signalStrength)
         {
             super.onSignalStrengthsChanged(signalStrength);
-            Toast.makeText(getApplicationContext(), "Go to Firstdroid!!! GSM Cinr = "
-                    + String.valueOf(signalStrength.getGsmSignalStrength()), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(), "Go to Firstdroid!!! GSM Cinr = "
+//                    + String.valueOf(signalStrength.getGsmSignalStrength()), Toast.LENGTH_SHORT).show();
 
             sim_degree_value.setText(String.valueOf(signalStrength.getGsmSignalStrength()));
+          //  sim_degree_value.setText(String.valueOf(signalStrength.getCdmaDbm()));  //获取联通3g信号
         }
 
     }
